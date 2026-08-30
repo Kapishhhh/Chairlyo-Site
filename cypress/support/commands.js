@@ -10,7 +10,26 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+import { loginSelector } from "./selector";
+
+Cypress.Commands.add(
+  "login",
+  (
+    username = Cypress.env("USERNAME"), password = Cypress.env("PASSWORD")
+  ) => {
+
+    cy.get(loginSelector.email_field)
+      .clear()
+      .type(username);
+
+    cy.get(loginSelector.password_field)
+      .clear()
+      .type(password);
+
+    cy.get(loginSelector.signon_button)
+      .click();
+  }
+);
 //
 //
 // -- This is a child command --
