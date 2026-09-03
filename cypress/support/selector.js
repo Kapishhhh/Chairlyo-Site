@@ -28,7 +28,7 @@ export const branchSelector = {
     "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M19 6v14a2')]",
 
 
-  type:  "input[@placeholder='Type Delete Branch here']",
+  type:  "//input[@placeholder='Type Delete Branch here']",
 
 
 

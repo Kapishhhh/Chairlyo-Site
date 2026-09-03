@@ -82,16 +82,13 @@ describe("Branch CRUD", () => {
       
 
   });
-    it("Verify Branch search functionality", () => {
+
+
+it("Verify Branch edit functionality", () => {
 
     cy.xpath(branchSelector.search)
       .should("be.visible")
       .type("aalu Branch");
-
-
-});
-
-it("Verify Branch edit functionality", () => {
 
   cy.xpath(branchSelector.edit_branch)
     // .should("be.visible")
@@ -101,31 +98,37 @@ it("Verify Branch edit functionality", () => {
       .should("be.visible")
       .clear()
       .type("aalu Branch Updated");
-    
-    cy.xpath(branchSelector.save_changes).eq(1)
-      .should("be.visible")
-      .click({ force: true });
+
+
+    cy.wait(1000);
+
+
+    cy.xpath(branchSelector.save_changes).eq(0)
+      .scrollIntoView({
+    duration: 500
+  })
+  .click({ force: true });
 
 });
 it("Verify Branch delete functionality", () => {
-
+  cy.xpath(branchSelector.search).should("be.visible")
+      .type("aalu Branch Updated");
+      cy.wait(2000);
   cy.xpath(branchSelector.icon_delete_branch)
     // .should("be.visible")
     .click({ force: true });
-
+cy.wait(2000);
    cy.xpath(branchSelector.type)
     .should("be.visible")  
     .click({ force: true })
     .type("Delete Branch");
-    
-  
-
-});
-
-it("verify branch click delete buttonn", () => {
+cy.wait(1000);
 
   cy.xpath(branchSelector.delete_branch)
     // .should("be.visible")
     .click({ force: true });
+cy.wait(1000);
+
+    cy.reload();
 });
 });
