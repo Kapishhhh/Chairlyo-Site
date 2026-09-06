@@ -7,6 +7,8 @@ describe("Service CRUD", () => {
     cy.branchLogin();
   });
 
+  // ok
+
   it("Verify Service Add functionality", () => {
 
     cy.xpath(addservice.catalog)
