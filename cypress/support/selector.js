@@ -55,7 +55,6 @@ export const branchSelector = {
 
   admin_first_name:
     "//input[@id='admin_first_name']",
-
   admin_last_name:
     "//input[@id='admin_last_name']",
 
@@ -146,7 +145,7 @@ export const waitingSelector = {
   process:"/html[1]/body[1]/div[3]/form[1]/div[3]/button[2]",
   delete:"//*[name()='path' and contains(@d,'M19 6v14a2')]",
   process500:"//button[normalize-space()='Process NRs. 500']",
-  cross:"/html[1]/body[1]/div[3]/form[1]/div[1]/h2[1]/div[1]/*[name()='svg'][1]",
+  cross:'svg[data-slot="dialog-close"]',
 }
 
 

@@ -96,8 +96,8 @@ describe("Waiting CRUD", () => {
         .should("be.visible")
         .scrollIntoView()
         .click({ force: true });
-
-        cy.xpath(waitingSelector.cross)
+        cy.wait(10000);
+        cy.get(waitingSelector.cross)
           .should("be.visible")
           .scrollIntoView()
           .click({ force: true });  
